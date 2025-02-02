@@ -1,0 +1,246 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F9FA; /* Light Gray Background */
+    color: #343A40; /* Dark Gray Text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #FFFFFF; /* White Background for Navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand {
+    color: #007BFF; /* Primary Color for Brand */
+}
+
+.navbar-nav .nav-link {
+    color: #343A40; /* Dark Gray for Links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+.btn-primary {
+    background-color: #007BFF; /* Primary Button Color */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.btn-secondary {
+    background-color: #6C757D; /* Secondary Button Color */
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Darker shade on hover */
+}
+
+.btn-danger {
+    background-color: #DC3545; /* Danger Button Color */
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker shade on hover */
+}
+
+.btn-info {
+    background-color: #17A2B8; /* Info Button Color */
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #138496; /* Darker shade on hover */
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 5px;
+}
+
+/* Custom Modal Styles */
+.modal-header {
+    background-color: #007BFF;
+    color: white;
+}
+
+.modal-body {
+    padding: 20px;
+    font-family: 'Century Schoolbook', serif;
+}
+
+.modal .btn-primary {
+    background-color: #007BFF;
+    border: none;
+}
+
+.modal .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.modal .form-control {
+    border: 1px solid #CED4DA; /* Light Gray Border */
+}
+
+.modal .form-control:focus {
+    border-color: #007BFF; /* Primary Color on Focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Shadow on Focus */
+}
+
+/* Footer Styles (if needed) */
+footer {
+    background-color: #343A40; /* Dark Gray Background */
+    color: white; /* White Text */
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center; /* Center align nav items on mobile */
+    }
+}
+
+/* Profile Icon Styling */
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px; /* Match the button padding */
+}
+
+.navbar .nav-link .fa-user-circle {
+    font-size: 28px; /* Adjust the icon size to match buttons */
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.navbar .nav-link:hover {
+    background-color: #007BFF;
+    color: white;
+    border-radius: 20px; /* Rounded corners on hover */
+}
+
+.navbar .nav-link i {
+    font-size: 28px; /* Make the icon bigger to match button size */
+}
+
+/* Hover effect on profile icon */
+.navbar .nav-link:hover .fa-user-circle {
+    color: white;
+    transform: scale(2.1); /* Slightly increase icon size on hover */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.playlist-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%; /* Make it a circle */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px; /* Space between icon and text */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item .fas.fa-user-circle {
+    font-size: 2rem !important; /* Adjust the size as needed */
+}
+
+.dropdown-item i {
+    margin-right: 10px; /* Add space between icon and text */
+    font-size: 1.2rem;  /* Adjust icon size */
+    color: #555;        /* Icon color */
+}
+
+.nav-item .nav-link i {
+    color: #343a40; /* Adjust the color to match your theme */
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item .nav-link i:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Navbar Icon Alignment */
+.navbar-nav .nav-item .nav-link i {
+    display: inline-block;
+    color: #343a40; /* Match the theme */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    vertical-align: middle;
+}
+
+.navbar-nav .nav-item .nav-link i:hover {
+    color: #007bff; /* Highlight on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Uniform Icon Sizing */
+.navbar-nav .nav-item .nav-link i {
+    font-size: 1.5rem; /* Match with profile size */
+    margin: 0 10px; /* Consistent spacing between icons */
+}
+
+/* Profile Icon Adjustments */
+.navbar-nav .dropdown .fas.fa-user-circle {
+    font-size: 2rem; /* Larger profile icon */
+}
+
+/* Search Container */
+/* Search Container */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Label for floating effect */
+.search-label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #6c757d;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Font Awesome Search Icon */
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #6c757d;
+}
+
+.navbar-brand {
+    font-family: 'Century Schoolbook', serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20
+}

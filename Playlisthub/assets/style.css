@@ -1,0 +1,765 @@
+body {
+    font-family: 'Century Schoolbook', serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #343a40;
+}
+
+.desktop-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Sidebar */
+
+
+.sidebar:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7); /* Even stronger shadow on hover */
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+
+/* Sidebar Title */
+.sidebar h3 {
+    font-family: 'Century Schoolbook', serif;
+    font-size: 23px; /* Slightly larger title */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #17a2b8; /* Blue accent under the title */
+    padding-bottom: 10px;
+    color: #ffffff;
+    letter-spacing: 1px; /* Adds some spacing for elegance */
+}
+
+/* Playlist Table */
+.playlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: 'Century Schoolbook', serif;
+    font-size: 16px;
+}
+
+.playlist-table th,
+.playlist-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #495057;
+    transition: background-color 0.3s ease;
+}
+
+.playlist-table th {
+    background-color: #495057;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.playlist-table td {
+    background-color: #343a40;
+}
+
+.playlist-table tr:hover td {
+    background-color: #495057; /* Highlight rows on hover */
+}
+
+.playlist-link i {
+    font-size: 16px; /* Adjust icon size */
+    vertical-align: middle; /* Align with the text */
+    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+.playlist-link:hover i {
+    color: #ffc107; /* Change color on hover */
+}
+
+
+/* Delete and Update Buttons */
+/* General Button Styling */
+.delete-btn, .update-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Delete Button Specific */
+.delete-btn {
+    color: #dc3545; /* Red color for delete */
+}
+
+.delete-btn:hover {
+    background: transparent; /* Keep background transparent on hover */
+    color: #dc3545; /* Lighter red on hover */
+}
+
+/* Update Button (Plus Icon) Specific */
+.update-btn {
+    color: #ffc107; /* Yellow color for add */
+}
+
+.update-btn:hover {
+    background: transparent; /* Keep background transparent on hover */
+    color: #fff700; /* Brighter yellow on hover */
+}
+
+/* Icons Styling */
+.delete-btn i, .update-btn i {
+    font-size: 20px; /* Set icon size */
+    transition: transform 0.3s ease-in-out;
+}
+
+.delete-btn:hover i, .update-btn:hover i {
+    transform: scale(1.2); /* Slightly enlarge icons on hover */
+}
+
+/* Animation */
+@keyframes smoothFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to the buttons */
+.delete-btn, .update-btn {
+    animation: smoothFadeIn 0.4s ease-out;
+}
+
+
+/* Create Playlist Button */
+/* Button for the plus icon - Circular Style */
+.create-playlist-btn-icon {
+    margin-bottom: 10px; /* Add some space below the button */
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Original button gradient */
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+    color: white;
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Uniform padding for a better look */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 25px; /* Create a capsule shape */
+}
+
+.create-playlist-btn-icon:hover {
+    background: linear-gradient(135deg, #0056b3, #003a75); /* Slightly darker gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.create-playlist-btn-icon:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.create-playlist-btn-icon i {
+    margin-right: 6px; /* Space between the icon and the text */
+    font-size: 16px; /* Icon size */
+}
+
+
+
+
+
+/* No Playlists Message */
+.no-playlists {
+    font-size: 18px;
+    color: #f8f9fa;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Responsive Sidebar for Mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .sidebar h3 {
+        font-size: 24px;
+    }
+
+    .playlist-table th, .playlist-table td {
+        padding: 10px;
+    }
+
+    .create-playlist-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.content h3 {
+    font-family: 'Century Schoolbook', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.form-search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 2px solid #9e9fa1; /* Blue border to match the theme */
+    border-radius: 25px;
+    font-size: 16px;
+    background: #f8f9fa; /* Original light background */
+    color: #343a40; /* Original text color */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    outline: none;
+    transition: all 0.3s ease-in-out, transform 0.2s ease; /* Added transform transition */
+    font-family: 'Century Schoolbook', serif;
+    
+    /* Initial small size */
+    transform: scale(0.9); /* Start slightly smaller */
+}
+
+/* Focus state with animation */
+input[type="text"]:focus {
+    border-color: #adafb1; /* Darker blue for focus state */
+    background: #ffffff; /* Slightly lighter on focus */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1); /* Expand to normal size on focus */
+}
+
+
+.create-playlist-btn-modal {
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Original button gradient */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Century Schoolbook', serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.create-playlist-btn-modal:hover {
+    background: linear-gradient(135deg, #0056b3, #003a75); /* Slightly darker gradient on hover */
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.create-playlist-btn-modal:active {
+    transform: translateY(1px);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.songs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.songs-table th,
+.songs-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.songs-table th {
+    background-color: #f8f9fa;
+    font-family: 'Cambria', serif;
+    font-size: 18px;
+    color: #343a40;
+}
+
+.songs-table td i {
+    cursor: pointer;
+    color: #007bff;
+    font-size: 18px;
+}
+
+.songs-table td i:hover {
+    color: #0056b3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    margin: 10% auto;
+    padding: 30px;
+    border: none;
+    border-radius: 15px;
+    width: 450px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    animation: slide-down 0.5s ease-out;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+    font-weight: bold;
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #495057;
+}
+
+.close-btn {
+    color: #343a40;
+    font-size: 28px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.modal-content i {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 10px;
+    animation: bounce 1s infinite;
+}
+
+/* Animations */
+@keyframes slide-down {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#updateMessage {
+    margin-top: 10px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-family: 'Century Schoolbook', serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .desktop-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+
+/* Sidebar */
+/* Sidebar */
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: linear-gradient(135deg, #343a40, #495057);
+    color: #ffffff;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for floating effect */
+    border-radius: 15px; /* Smoother rounded corners */
+    transition: all 0.3s ease-in-out;
+    position: relative; /* Positioned relative to the page */
+    top: 16px; /* Spaced from the top of the page */
+    left: 15px; /* Spaced from the left of the page */
+    z-index: 100; /* Ensure it stays above other content */
+}
+
+.sidebar.collapsed {
+    display: none; /* Completely hide the sidebar when collapsed */
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+    display: block;
+    font-size: 14px;  /* Reduced font size */
+    background: #343a40;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Thin border */
+    border-radius: 5px;  /* Rounded button */
+    padding: 1px 8px;
+    cursor: pointer;
+    position: fixed;
+    top: 75px;
+    left: 18px;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Hover effect for the button */
+.sidebar-toggle-btn:hover {
+    transform: scale(1.1);  /* Slightly enlarge the button */
+    border-color: white;  /* Make the border more prominent */
+    background-color: rgba(255, 255, 255, 0.2);  /* Light background on hover */
+}
+
+/* Focused state to ensure accessibility */
+.sidebar-toggle-btn:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);  /* Glow effect on focus */
+}
+
+
+
+.sidebar.collapsed h3 {
+    opacity: 0; /* Hide the title when collapsed */
+}
+
+.playlist-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%; /* Make it a circle */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px; /* Space between icon and text */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item .fas.fa-user-circle {
+    font-size: 2rem !important; /* Adjust the size as needed */
+}
+
+.dropdown-item i {
+    margin-right: 10px; /* Add space between icon and text */
+    font-size: 1.2rem;  /* Adjust icon size */
+    color: #555;        /* Icon color */
+}
+
+.nav-item .nav-link i {
+    color: #343a40; /* Adjust the color to match your theme */
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item .nav-link i:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Navbar Icon Alignment */
+.navbar-nav .nav-item .nav-link i {
+    display: inline-block;
+    color: #343a40; /* Match the theme */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    vertical-align: middle;
+}
+
+.navbar-nav .nav-item .nav-link i:hover {
+    color: #007bff; /* Highlight on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Uniform Icon Sizing */
+.navbar-nav .nav-item .nav-link i {
+    font-size: 1.5rem; /* Match with profile size */
+    margin: 0 10px; /* Consistent spacing between icons */
+}
+
+/* Profile Icon Adjustments */
+.navbar-nav .dropdown .fas.fa-user-circle {
+    font-size: 2rem; /* Larger profile icon */
+}
+
+/* Search Container */
+/* Search Container */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Label for floating effect */
+.search-label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #6c757d;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Font Awesome Search Icon */
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #6c757d;
+}
+
+/* Search input field */
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 15px 35px 15px 20px; /* Adjust padding for label and icon */
+    font-size: 16px;
+    border: 2px solid #ced4da;
+    border-radius: 25px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+/* When the input field is focused */
+.search-container input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.search-container input[type="text"]:focus + .search-icon {
+    color: #007bff;
+}
+
+/* When the input has value or is focused */
+.search-container input[type="text"]:not(:placeholder-shown) + .search-icon + .search-label,
+.search-container input[type="text"]:focus + .search-icon + .search-label {
+    top: 0;
+    left: 20px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.add-playlist-container {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.add-playlist-btn {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-playlist-btn:hover {
+    background-color: #138496;
+}
+
+.add-playlist-form {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.playlist-name-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60%;
+    font-size: 14px;
+}
+
+.add-playlist-submit {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.add-playlist-submit:hover {
+    background-color: #218838;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal container for create playlist modal */
+.create-playlist-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Dark background with more opacity */
+}
+
+/* Modal content for create playlist modal */
+.create-playlist-modal .modal-content {
+    background-color: #fff; /* White background */
+    margin: 10% auto; /* Center the modal */
+    padding: 30px; /* Increased padding for better spacing */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    width: 80%; /* Responsive width */
+    max-width: 500px; /* Maximum width */
+    animation: slide-in 0.3s ease; /* Animation for modal appearance */
+}
+
+/* Close button for create playlist modal */
+.create-playlist-modal .close {
+    color: #aaa; /* Light gray */
+    float: right; /* Align to the right */
+    font-size: 28px; /* Larger size */
+    font-weight: bold; /* Bold text */
+}
+
+.create-playlist-modal .close:hover,
+.create-playlist-modal .close:focus {
+    color: #ff4d4d; /* Change color on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Input field for playlist name */
+.create-playlist-modal input[type="text"] {
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding for input */
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    margin-bottom: 20px; /* Space below input */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: border-color 0.3s ease; /* Transition for border color */
+}
+
+.create-playlist-modal input[type="text"]:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Submit button for create playlist modal */
+.create-playlist-modal .submit-btn {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 12px 20px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+}
+
+.create-playlist-modal .submit-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Animation for modal appearance */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide in from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End position */
+    }
+}

@@ -1,0 +1,263 @@
+/* General Styles */
+body {
+    font-family: 'Century Schoolbook', serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    color: #343a40;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Century Schoolbook', serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.message {
+    color: #dc3545;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Content Styles */
+.content {
+    margin-top: 20px;
+}
+
+h3 {
+    font-family: 'Cambria', serif;
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 16px;
+}
+
+th {
+    background: #007bff;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+td {
+    background: #ffffff;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    font-family: 'Century Schoolbook', serif; /* Font family */
+    color: transparent; /* Make text color transparent */
+    background: transparent; /* Transparent background */
+    cursor: pointer; /* Pointer cursor */
+    position: relative; /* Position relative for pseudo-elements */
+}
+
+/* Icon Styles */
+button i {
+    color: #007bff; /* Icon color */
+    font-size: 20px; /* Icon size */
+    transition: color 0.3s ease-in-out; /* Transition for icon color */
+}
+
+/* Hover Effect */
+button:hover {
+    background: transparent; /* Keep background transparent on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+    
+}
+
+/* Change icon color on hover */
+button:hover i {
+    color: #0056b3; /* Change icon color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+input[type="text"], input[type="hidden"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-family: 'Century Schoolbook', serif;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background for better contrast */
+    backdrop-filter: blur(5px); /* Blur effect for the background */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #ffffff; /* White background */
+    margin: 10% auto; /* Center the modal */
+    padding: 30px; /* Increased padding for better spacing */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Maximum width */
+    animation: slide-in 0.3s ease; /* Animation for modal appearance */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Close button */
+.close {
+    color: #aaa; /* Light gray */
+    align-self: flex-end; /* Align to the right */
+    font-size: 28px; /* Larger size */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.close:hover, .close:focus {
+    color: #ff4d4d; /* Change color on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Modal Title */
+.modal-title {
+    font-size: 1.5em; /* Title font size */
+    margin-bottom: 20px; /* Space below the title */
+    color: #333; /* Dark color for title */
+    text-align: center; /* Center the title */
+}
+
+/* Modal Body */
+.modal-body {
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space below the body */
+    text-align: center; /* Center text */
+}
+
+/* Button styles */
+.modal-content button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    margin-top: 10px; /* Space above the button */
+    width: 100%; /* Full width for buttons */
+}
+
+.modal-content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Animation for modal appearance */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide in from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End position */
+    }
+}
+

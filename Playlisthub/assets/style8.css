@@ -1,0 +1,150 @@
+body {
+    font-family: 'Century Schoolbook', serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px; /* Space above the container */
+}
+
+.playlist-title {
+    text-align: center;
+    color: #333;
+    font-size: 2em; /* Larger font size for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.song-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.song-item {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center vertically */
+    background-color: #efeaea;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.song-item:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.song-details {
+    display: flex; /* Use flexbox for song details */
+    flex-direction: column; /* Stack items vertically */
+    flex-grow: 1; /* Allow it to grow */
+}
+
+.song-title {
+    font-weight: bold; /* Bold for song title */
+    color: #007bff; /* Blue color for song title */
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+.song-artist {
+    color: #555; /* Darker gray for artist name */
+    font-size: 1em; /* Normal font size */
+}
+
+.song-duration {
+    color: #999; /* Lighter gray for duration */
+    font-size: 0.9em; /* Smaller font size */
+}
+
+
+
+/* No Songs Message */
+.no-songs {
+    text-align: center;
+    font-size: 1.2em;
+    color: #dc3545; /* Red color for no songs message */
+    margin-top: 20px; /* Space above the message */
+}
+
+/* Error Message */
+.error-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #dc3545; /* Red color for error message */
+    margin-top: 20px; /* Space above the message */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Full width on smaller screens */
+    }
+
+    .playlist-title {
+        font-size: 1.5em; /* Smaller title on mobile */
+    }
+
+    .song-item {
+        padding: 10px; /* Less padding on mobile */
+    }
+}
+
+/* Dropdown Menu Styles */
+/* Dropdown Menu Styles */
+.song-dropdown {
+    position: relative; /* Positioning for absolute children */
+    display: inline-block; /* Aligns with other elements */
+}
+
+.song-dropdown-btn {
+    background: none; /* No default button styling */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.5em; /* Size of the button */
+}
+
+.song-dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Absolute positioning */
+    background-color: #fff; /* White background for dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 10; /* Ensure it appears above other elements */
+    border-radius: 5px; /* Rounded corners */
+    min-width: 200px; /* Minimum width to prevent cramming */
+    padding: 10px 0; /* Padding around the menu items */
+    left: 100%; /* Position to the right of the button */
+    top: 0; /* Align with the top of the button */
+}
+
+
+/* Show the dropdown when toggled */
+.song-dropdown-menu.show {
+    display: block; /* Show when toggled */
+}
+
+/* Styles for dropdown items */
+.song-dropdown-item {
+    padding: 10px 15px; /* Padding for items */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    display: block; /* Block display for full width */
+}
+
+/* Add hover effect for items */
+.song-dropdown-item:hover {
+    background-color: #f1f1f1; /* Highlight on hover */
+}
+
+/* Optional: Add a transition for smooth appearance */
+.song-dropdown-menu {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}

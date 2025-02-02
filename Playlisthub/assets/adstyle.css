@@ -1,0 +1,239 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container to center the content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Search Section */
+.search-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-section form {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-section input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.search-section button:hover {
+    background-color: #2980b9;
+}
+
+/* User Playlists Section */
+.user-playlists-section {
+    margin-top: 40px;
+}
+
+/* General table styles */
+.user-playlist-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-playlist-table th, .user-playlist-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+.user-playlist-table th {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+}
+
+.user-playlist-table td {
+    background-color: #fff;
+}
+
+.user-playlist-table tr:hover {
+    background-color: #ecf0f1;
+}
+
+/* Playlist List */
+.user-playlist-table .playlists-list {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.user-playlist-table .playlists-list li {
+    padding: 5px 0;
+}
+
+.user-playlist-table .playlists-list a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-playlist-table .playlists-list a:hover {
+    color: #2980b9;
+}
+
+/* Song List */
+.song-list {
+    display: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.song-list li {
+    padding: 6px 0;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.song-list li a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.song-list li a:hover {
+    color: #2980b9;
+}
+
+/* Song Details Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.popup .close:hover {
+    color: #e74c3c;
+}
+
+.popup label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.popup input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #2980b9;
+}
+
+.add-songs-button {
+    margin: 20px 0; /* Add some space above and below */
+}
+
+.add-songs-btn {
+    display: inline-block;
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for better look */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.add-songs-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.view-songs-button {
+    margin: 20px 0; /* Add some space above and below */
+}
+
+.view-songs-btn {
+    display: inline-block;
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for better look */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.view-songs-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}

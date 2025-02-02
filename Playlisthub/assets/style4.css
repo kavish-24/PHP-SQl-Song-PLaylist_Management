@@ -1,0 +1,86 @@
+/* Main container styling */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Success message styling */
+.success-message {
+    color: #4CAF50;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="time"], select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Song list styling */
+.song-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.song-list li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+
+/* Playlist links */
+.playlist-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.playlist-list li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.playlist-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Button to view all songs */
+.btn-view-songs button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn-view-songs button:hover {
+    background-color: #0056b3;
+}

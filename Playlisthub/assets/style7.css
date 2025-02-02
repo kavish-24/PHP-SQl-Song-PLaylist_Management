@@ -1,0 +1,391 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto; /* Center the container */
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Two columns: one for filters, one for results */
+    gap: 20px;
+}
+
+header {
+    grid-column: span 2; /* Ensure the header spans both columns */
+    text-align: center;
+    padding: 20px; /* Add some padding for the header */
+    background-color: #007BFF; /* Blue background for the header */
+    color: white; /* White text */
+}
+
+/* Style the search form input */
+.search-header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Limit the width */
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 25px; /* Match input corners */
+    padding: 10px 15px;
+    margin-left: 10px; /* Space between input and button */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex; /* Center the icon */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.search-button i {
+    font-size: 18px; /* Adjust icon size */
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.search-button:focus {
+    outline: none; /* Remove default outline */
+}
+
+
+/* Filters section styling */
+/* Filters section styling */
+/* Filters section styling */
+.filters {
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 300px; /* Limit the width */
+    margin: 20px auto; /* Center the filters section */
+    transition: transform 0.3s ease; /* Transition for hover effect */
+    height: 470px; /* Set a specific height */
+}
+
+.filters:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.filters h2 {
+    font-size: 1.5em; /* Larger font size for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+    color: #007bff; /* Blue color for the heading */
+    text-align: center; /* Center the heading */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.genre-list {
+    margin-bottom: 20px; /* Space below the genre list */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack checkboxes vertically */
+}
+
+.genre-checkbox {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center vertically */
+    margin-bottom: 2px; /* Space between checkboxes */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s ease; /* Transition for background color */
+    padding: 10px; /* Padding for checkbox */
+    border-radius: 5px; /* Rounded corners */
+    position: relative; /* Position relative for pseudo-element */
+}
+
+.genre-checkbox:hover {
+    background-color: #f0f8ff; /* Light blue background on hover */
+}
+
+.genre-checkbox input {
+    margin-right: 10px; /* Space between checkbox and label */
+    accent-color: #007bff; /* Change checkbox color */
+    width: 20px; /* Fixed width for checkbox */
+    height: 20px; /* Fixed height for checkbox */
+}
+
+.genre-label {
+    font-size: 1.1em; /* Slightly larger font size for genre names */
+    color: #333; /* Darker text color */
+    transition: color 0.2s ease; /* Transition for color */
+}
+
+.genre-checkbox input:checked + .genre-label {
+    color: #007bff; /* Change color when checked */
+    font-weight: bold; /* Bold text when checked */
+}
+
+.filter-buttons {
+    display: flex; /* Flexbox for button alignment */
+    justify-content: space-between; /* Space between buttons */
+}
+
+.apply-filters, .reset-filters {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    flex: 1; /* Equal width for buttons */
+    margin: 0 5px; /* Space between buttons */
+}
+
+.apply-filters:hover, .reset-filters:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.reset-filters {
+    background-color: #dc3545; /* Red background for reset */
+}
+
+.reset-filters:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+
+/* Results styling */
+/* Results styling */
+.results {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.results h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.results ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.song-card {
+    background-color: #ccccf8; /* Dark background for the card */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Position relative for absolute positioning of the button */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    display: flex; /* Ensure the card items inside are aligned properly */
+    flex-direction: column; /* Stack the contents vertically */
+    width: 100%; /* Ensure each card takes the full width of the column */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+.song-details {
+    margin: 10px 0; /* Space for the button */
+    color: #ffffff; /* White text for better contrast */
+}
+
+.song-title {
+    font-size: 1.5em;
+    margin: 0 0 5px;
+    color: #00aaff; /* Spotify green for song title */
+}
+
+.song-artist {
+    font-size: 1em;
+    margin: 0;
+    color: #8291a5; /* Lighter gray for artist */
+}
+
+.song-duration {
+    font-size: 0.9em;
+    color: #8291a5; /* Lighter gray for duration */
+}
+
+/* Plus icon button styling */
+.add-to-playlist {
+    position: absolute; /* Positioning the button */
+    bottom: 15px; /* Space from the bottom */
+    right: 15px; /* Space from the right */
+    background-color: #007bff; /* Spotify green */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    display: flex; /* Center the icon */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 1.5em; /* Icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.add-to-playlist:hover {
+    background-color: #0056b3; /* Darker green on hover */
+}
+
+.no-results {
+    text-align: center;
+    color: #b3b3b3; /* Lighter gray for no results message */
+    font-size: 1.2em;
+}
+
+/* Modal styling */
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    top: 0; /* Stay at the top */
+    left: 0; /* Stay at the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.8); /* Darker background with transparency */
+    justify-content: center; /* Center the modal */
+    align-items: center; /* Center the modal */
+    z-index: 1000; /* Sit on top */
+    backdrop-filter: blur(5px); /* Blur the background */
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #e0e0e0); /* Gradient background */
+    padding: 30px; /* Increased padding */
+    border-radius: 15px; /* More rounded corners */
+    width: 400px; /* Fixed width */
+    max-width: 90%; /* Responsive max width */
+    text-align: center; /* Center text */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    position: relative; /* Position relative for close button */
+    animation: slideIn 0.5s ease; /* Slide-in animation */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal h2 {
+    font-size: 1.8em; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Darker text color */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Subtle text shadow */
+}
+
+.modal select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for select */
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+    margin-bottom: 20px; /* Space below select */
+    transition: border-color 0.3s ease; /* Transition for border color */
+    background-color: #f8f9fa; /* Light background for select */
+}
+
+.modal select:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    outline: none; /* Remove default outline */
+}
+
+.modal button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.2em; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+.modal button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.modal .close {
+    position: absolute; /* Position absolute for close button */
+    top: 15px; /* Space from the top */
+    right: 15px; /* Space from the right */
+    font-size: 1.5em; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    color: #333; /* Darker color for close button */
+    transition: color 0.3s ease; /* Transition for color */
+}
+
+.modal .close:hover {
+    color: #dc3545; /* Change color on hover */
+    transform: rotate(90deg); /* Rotate on hover */
+}
+
+
+
+#search-container button {
+    padding: 1em 2em;
+    margin-left: 1em;
+    background-color: #6759ff;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 0.5em;
+  }
+  .button-value {
+    border: 2px solid #6759ff;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    color: #6759ff;
+    cursor: pointer;
+  }
+  .active {
+    background-color: #6759ff;
+    color: #ffffff;
+  }
+
+  

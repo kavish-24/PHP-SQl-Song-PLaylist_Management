@@ -1,0 +1,59 @@
+/* style.css */
+
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Optional: Style error message to align with custom theme */
+.error-message {
+    color: #f87171; /* Tailwind's red-400 */
+}
+
+/* Login Container */
+.container {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+/* Add a more dynamic hover effect on buttons */
+button:hover {
+    background-color: #4338ca; /* Tailwind's indigo-700 */
+    transform: scale(1.05); /* Button size increase on hover */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Background Styling */
+.bg-gradient {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient colors */
+}
+
+/* Button Focus Effect */
+input:focus,
+button:focus {
+    outline: none;
+    border: 2px solid #4c6ef5;
+}
+
+/* Box Shadow for Inputs */
+input {
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(76, 110, 245, 0.8);
+}
+
+/* Add a subtle animation to the entire page load */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-in-out;
+}
